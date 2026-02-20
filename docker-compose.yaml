@@ -8,7 +8,7 @@ services:
       - ./:/workspace
     entrypoint: /bin/bash
     command: >-
-       -c "pip install nvidia-physicsnemo-sym --no-build-isolation &&
+       -c "pip install jupyterlab &&
        git clone https://github.com/ivanauyeung/NVAITC-MATH4AI-SAMP.git &&
        jupyter lab --ip=0.0.0.0 --no-browser --NotebookApp.token=''
        --allow-root --NotebookApp.allow_origin='*' --NotebookApp.password=''
