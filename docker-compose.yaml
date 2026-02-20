@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  container-1:
+    image: pytorch/pytorch:2.10.0-cuda12.8-cudnn9-devel
+    ports:
+      - '8888:8888'
+    volumes:
+      - ./:/workspace
+    entrypoint: /bin/bash
+    command: >-
+       -c "pip install nvidia-physicsnemo-sym --no-build-isolation &&
+       git clone https://github.com/ivanauyeung/NVAITC-MATH4AI-SAMP.git &&
+       jupyter lab --ip=0.0.0.0 --no-browser --NotebookApp.token=''
+       --allow-root --NotebookApp.allow_origin='*' --NotebookApp.password=''
+       --notebook-dir='./NVAITC-MATH4AI-SAMP'"
