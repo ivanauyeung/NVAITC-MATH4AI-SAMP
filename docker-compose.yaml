@@ -9,7 +9,7 @@ services:
     entrypoint: /bin/bash
     command: >-
        -c "export PATH="$HOME/.local/bin:$PATH" &&
-       pip install jupyterlab &&
+       pip install --break-system-packages jupyterlab &&
        git clone https://github.com/ivanauyeung/NVAITC-MATH4AI-SAMP.git &&
        jupyter lab --ip=0.0.0.0 --no-browser --NotebookApp.token=''
        --allow-root --NotebookApp.allow_origin='*' --NotebookApp.password=''
